@@ -35,6 +35,7 @@ public class SigningOptionsForm {
   private JBRadioButton myArchArmv7RadioButton;
   private JBRadioButton myArchX86RadioButton;
   private JBRadioButton myArchArmv8RadioButton;
+  private JBRadioButton myArchAabRadioButton;
 
   private JCheckBox myUseTempCertificateCheckBox;
 
@@ -100,6 +101,7 @@ public class SigningOptionsForm {
         myArchArmv7RadioButton.setVisible(false);
         myArchX86RadioButton.setVisible(false);
         myArchArmv8RadioButton.setVisible(false);
+        myArchAabRadioButton.setVisible(false);
         // no break here
       case Android:
         myProvisioningProfileLabel.setVisible(false);
@@ -114,6 +116,7 @@ public class SigningOptionsForm {
         myArchArmv7RadioButton.setVisible(false);
         myArchX86RadioButton.setVisible(false);
         myArchArmv8RadioButton.setVisible(false);
+        myArchAabRadioButton.setVisible(false);
         myUseTempCertificateCheckBox.setVisible(false);
         showMoreOptions(false);
         myMoreOptionsHyperlinkLabel.setVisible(false);
@@ -183,6 +186,7 @@ public class SigningOptionsForm {
   private String getArch() {
     if (myArchX86RadioButton.isSelected()) return AirSigningOptions.ARCH_X86;
     if (myArchArmv8RadioButton.isSelected()) return AirSigningOptions.ARCH_ARMV8;
+    if (myArchAabRadioButton.isSelected()) return AirSigningOptions.ARCH_AAB;
     return AirSigningOptions.ARCH_ARMV7;
   }
 
@@ -192,6 +196,9 @@ public class SigningOptionsForm {
     }
     else if (signingOptions.getArch().equals(AirSigningOptions.ARCH_ARMV8)) {
       myArchArmv8RadioButton.setSelected(true);
+    }
+    else if (signingOptions.getArch().equals(AirSigningOptions.ARCH_AAB)) {
+      myArchAabRadioButton.setSelected(true);
     }
     else {
       myArchArmv7RadioButton.setSelected(true);

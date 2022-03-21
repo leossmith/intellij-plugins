@@ -10,6 +10,7 @@ public class AirSigningOptions {
   public static final String ARCH_ARMV7 = "armv7";
   public static final String ARCH_X86 = "x86";
   public static final String ARCH_ARMV8 = "armv8";
+  public static final String ARCH_AAB = "aab";
   public static final String ARCH_DEFAULT = ARCH_ARMV7;
 
   @NotNull private String myArch = ARCH_DEFAULT;
